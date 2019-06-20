@@ -7,7 +7,7 @@ import java.util.Random;
 public class MainTest {
 
         @Test
-        public void sumOfPositives() {
+        public void sumOfPositives() throws MyException{
             int[] arr = new int[]{1,2,3};
              SumOfArray sum= new SumOfArray(arr);
              int summ = sum.total();
@@ -15,21 +15,21 @@ public class MainTest {
         }
 
         @Test
-        public void sumOfNegatives(){
+        public void sumOfNegatives() throws MyException{
             int[] arr = new int[]{-1,-2,-3};
             SumOfArray sum = new SumOfArray(arr);
             int summ = sum.total();
             assertEquals(-6,summ);
         }
 
-        @Test(expected = NullPointerException.class)
-            public void nullPointerTest(){
+        @Test(expected = MyException.class)
+            public void nullPointerTest() throws MyException{
             int[] arr=null;
             SumOfArray sum = new SumOfArray(arr);
         }
 
         @Test
-            public void notNullTest(){
+            public void notNullTest() throws MyException{
             int[] arr = new int[]{55,55,55};
             SumOfArray sum = new SumOfArray(arr);
             int summ = sum.total();
